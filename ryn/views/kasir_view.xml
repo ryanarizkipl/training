@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ryn.kasir inherit tree view -->
+    <record id="ryn_kasir_view_tree_inherit" model="ir.ui.view">
+        <field name="name">Daftar Kasir</field>
+        <field name="model">ryn.kasir</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="ryn_person_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tgl_lahir']" position="after">
+                <field name="id_kasir"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ryn.kasir inherit form view -->
+    <record id="ryn_kasir_view_form_inherit" model="ir.ui.view">
+        <field name="name">Form Kasir</field>
+        <field name="model">ryn.kasir</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="ryn_person_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tgl_lahir']" position="after">
+                <field name="id_kasir"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- ryn.kasir action window -->
+    <record id="ryn_kasir_action" model="ir.actions.act_window">
+        <field name="name">Kasir</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ryn.kasir</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="ryn_kasir_menu_act"
+              name="Kasir"
+              parent="ryn_pegawai_menu_categ"
+              action="ryn_kasir_action"
+              sequence="10"/>
+</odoo>

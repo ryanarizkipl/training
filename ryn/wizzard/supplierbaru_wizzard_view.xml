@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- model.name form view -->
+    <record id="supplier_baru_view_form_wizzard" model="ir.ui.view">
+        <field name="name">Supplier Baru</field>
+        <field name="model">ryn.supplierbaru</field>
+        <field name="arch" type="xml">
+            <form string="Form Supplier Baru">
+                <sheet>
+                    <group>
+                        <!-- <field name="nm_per"/>
+                        <field name="almbaru"/> -->
+                        <!-- <field name="notelp"/> -->
+                        <!-- <field name="bar_id"/> -->
+                        <field name="sup_id"/>
+                    </group>
+                    <group name="barang" string="Barang">
+                        <field name="barang_id"/>
+                    </group>
+                    <footer>
+                        <button name ="button_supplier_baru" type="object" string="Input Alamat Supplier" class="btn btn-warning"/>
+                        <button string="Cancel" special="cancel" class="btn btn-danger"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- model.name action window -->
+    <record id="supplier_baru_action_wizzard" model="ir.actions.act_window">
+        <field name="name">Supplier Baru</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ryn.supplierbaru</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="supplier_baru_view_form_wizzard"/>
+        <field name="target">new</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="supplier_baru_menu_action_wizzard"
+            name="Input Supplier"
+            parent="ryn_supplier_menu_categ"
+            action="supplier_baru_action_wizzard"
+            sequence="48"/>
+
+</odoo>
