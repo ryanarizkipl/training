@@ -9,3 +9,4 @@ access_ryn_penjualan,accsess.ryn.penjualan,model_ryn_penjualan,,1,1,1,1
 access_ryn_detailpenjualan,accsess.ryn.detailpenjualan,model_ryn_detailpenjualan,,1,1,1,1
 access_ryn_barangdatang,accsess.ryn.barangdatang,model_ryn_barangdatang,,1,1,1,1
 access_ryn_supplierbaru,accsess.ryn.supplierbaru,model_ryn_supplierbaru,,1,1,1,1
+access_ryn_penjualanreport,accsess.ryn.penjualanreport,model_ryn_penjualanreport,,1,1,1,1

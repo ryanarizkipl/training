@@ -41,5 +41,15 @@
         <field name="binding_type">report</field>
     </record>
 
+    <record id="wizzard_penjualanreport_pdf" model="ir.actions.report">
+        <field name="name">Print Report</field>
+        <field name="model">ryn.penjualanreport</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ryn.wizzard_penjualanreport_pdf_tmp</field>
+        <field name="report_file">ryn.wizzard_penjualanreport_pdf_tmp</field>
+        <field name="binding_model_id" ref="model_ryn_penjualanreport"/>
+        <field name="binding_type">report</field>
+    </record>
+
 
 </odoo>

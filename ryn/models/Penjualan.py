@@ -6,12 +6,12 @@ class Penjualan(models.Model):
     _description = 'New Description'
 
     name = fields.Char(string='No. Nota')
-    nama_pembeli = fields.Char(string='Nama Pembeli')
-    # nama_pembeli = fields.Many2one(comodel_name="res.partner", string='Nama Pembeli')
-    # id_member = fields.Char(
-    #     compute="_compute_id_member",
-    #     string='Id_member',
-    #     required=False)
+    # nama_pembeli = fields.Char(string='Nama Pembeli')
+    nama_pembeli = fields.Many2one(comodel_name="res.partner", string='Nama Pembeli')
+    id_member = fields.Char(
+        compute="_compute_id_member",
+        string='Id_member',
+        required=False)
     tgl_penjualan = fields.Datetime(string='Tanggal Transaksi', default=fields.Datetime.now())    
     total_bayar = fields.Integer(compute='_compute_totalbayar', string='Total Pembayaran')
     detailpenjualan_ids = fields.One2many(
@@ -21,10 +21,10 @@ class Penjualan(models.Model):
 
     state = fields.Selection(string='Status', selection=[('draft', 'Draft'),('confirm', 'Confirm'),('done', 'Done'),('cancelled', 'Cancelled')], required=True, readonly=True, default='draft')
     
-    # @api.depends('nama_pembeli')
-    # def _compute_id_member(self):
-    #     for rec in self:
-    #         rec.id_member = rec.nama_pembeli.id_member
+    @api.depends('nama_pembeli')
+    def _compute_id_member(self):
+        for rec in self:
+            rec.id_member = rec.nama_pembeli.id_member
 
     def action_confirm(self):
         self.write({'state': 'confirm'})

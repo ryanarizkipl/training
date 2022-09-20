@@ -6,11 +6,20 @@
         <field name="name">List Penjualan</field>
         <field name="model">ryn.penjualan</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-success="state == 'draft'"
+                  decoration-muted="state == 'cancelled'"
+                  decoration-info="state == 'confirm'"
+                  decoration-primary="state == 'done'">
                 <field name="name"/>
                 <field name="nama_pembeli"/>
                 <field name="tgl_penjualan"/>
                 <field name="total_bayar"/>
+                <field name="state"
+                  decoration-success="state == 'draft'"
+                  decoration-muted="state == 'cancelled'"
+                  decoration-info="state == 'confirm'"
+                  decoration-primary="state == 'done'"
+                widget="badge"/>
             </tree>
         </field>
     </record>

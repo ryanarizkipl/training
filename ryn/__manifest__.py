@@ -37,8 +37,10 @@
         'views/penjualan_view.xml',
         'report/report.xml',
         'report/print_faktur_penjualan.xml',
+        'report/wizzard_penjualanreport_template.xml',
         'wizzard/barangdatang_wizzard_view.xml',
         'wizzard/supplierbaru_wizzard_view.xml',
+        'wizzard/penjualanreport_wizzard_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

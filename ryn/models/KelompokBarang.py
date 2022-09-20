@@ -36,7 +36,3 @@ class KelompokBarang(models.Model):
             record.daftar = a
 
     daftar = fields.Char(string='Daftar isi')
-    
-    
-    
-    
